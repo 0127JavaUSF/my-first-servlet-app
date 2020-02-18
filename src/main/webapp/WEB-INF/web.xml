@@ -2,6 +2,37 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
+<!-- Do not confuse this with the pom.xml -->
+
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+  <!-- Declaration of a Servlet for use by Tomcat -->
+  <servlet>
+  	<servlet-name>hello-servlet</servlet-name>
+  	<servlet-class>com.revature.servlets.HelloServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>pokemon-servlet</servlet-name>
+	<servlet-class>com.revature.servlets.PokemonServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>hello-servlet</servlet-name>
+  	<url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>pokemon-servlet</servlet-name>
+  	<url-pattern>/pokemon/*</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- Provided a list of default landing pages that can be served
+  		without providing a resource context -->
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  	<welcome-file>content.json</welcome-file>
+  </welcome-file-list>
 </web-app>
